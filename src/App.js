@@ -11,27 +11,35 @@ function App() {
 
   return (
     <div className="App">
-      <thead>
-        <tr>
-          <th> Picture </th>
-          <th> Name </th>
-          <th> Popularity </th>
-        </tr>
-      </thead>
-      <tbody>
-        {actors.map((actor) => {
-          return (
-            <tr key={actor.id}>
-              <td>
-                <img classeName="imgActor" src={actor.pictureUrl} alt="Actor" />
-              </td>
+      <table className="tableActors">
+        <thead>
+        <h1>IronContacts</h1>
+          <tr>
+            <th> Picture </th>
+            <th> Name </th>
+            <th> Popularity </th>
+          </tr>
+        </thead>
+        <tbody>
+          {actors.map((actor) => {
+            return (
+              <tr key={actor.id}>
+                <td>
+                  <img
+                    src={actor.pictureUrl}
+                    width="100px"
+                    height="120px"
+                    alt="Actor"
+                  />
+                </td>
 
-              <td> {actor.name} </td>
-              <td> {Number(actor.popularity).toFixed(2)}</td>
-            </tr>
-          );
-        })}
-      </tbody>
+                <td> {actor.name} </td>
+                <td> {Number(actor.popularity).toFixed(2)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
